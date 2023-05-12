@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Modern Planner",
+  "name": "Modern calendar-planner metagraph based",
   "icons": [
     {
       "src": "favicon.ico",

@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router-dom";
 
-import './index.css';
-import {MainPage} from "./views/MainPage/mainPage";
+import './index.scss';
+import { MainPage } from "@views/MainPage/MainPage";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement

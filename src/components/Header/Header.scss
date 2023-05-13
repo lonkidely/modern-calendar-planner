@@ -1,6 +1,87 @@
+@import '@styles/index.scss';
+
 .header {
   height: 55px;
+  width: 100%;
+
+  background: #F3F4F6;
+  border-radius: 5px;
+
+  box-shadow: 0 4px 6px -4px rgba(24, 39, 75, 0.12), 0px 8px 8px -4px rgba(24, 39, 75, 0.08);
 
   display: flex;
-  flex-direction: row;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: center;
+
+  &__logo {
+    height: 50px;
+
+    margin-left: var(--standart-margin);
+
+    white-space: nowrap;
+
+    cursor: pointer;
+    content: url("@icons/plannerLogo.png");
+  }
+
+  &__menu {
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-items: center;
+    justify-content: center;
+
+    height: var(--header-height);
+
+    font-family: $sans-serif;
+
+    &__item {
+      margin-right: 30px;
+
+      text-decoration: none;
+
+      color: #000000;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+    }
+
+  }
+
+  &__login__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    width: 178px;
+    height: var(--header-height);
+
+    margin-right: var(--standart-margin);
+
+    background: #0A84FF;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    &__text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: var(--standart-font-size);
+
+      font-family: $sans-serif;
+
+      text-decoration: none;
+
+      color: #FFFFFF;
+    }
+  }
 }

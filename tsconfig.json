@@ -4,6 +4,9 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@views/*": ["src/views/*"],
+      "@assets/*":  ["src/assets/*"],
+      "@icons/*":  ["src/assets/icons/*"],
+      "@styles/*":  ["src/styles/*"]
     },
     "target": "es5",
     "allowJs": true,

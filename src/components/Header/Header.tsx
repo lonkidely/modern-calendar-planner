@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 import {Link} from "react-router-dom";
 
-export const Header: React.FC<any> = () => {
+export const Header: React.FC<unknown> = () => {
     return (
         <header className="header">
             <div className="header__logo"></div>
@@ -16,4 +16,4 @@ export const Header: React.FC<any> = () => {
             </div>
         </header>
     );
-}
+};

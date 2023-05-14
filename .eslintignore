@@ -1,0 +1,7 @@
+.idea
+node_modules
+public
+libs
+__mocks__
+dist
+assets

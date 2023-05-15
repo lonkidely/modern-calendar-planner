@@ -1,0 +1,56 @@
+@import '@styles/index.scss';
+
+.note {
+  width: 30%;
+  min-width: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 6px;
+  border: solid 1px darkgray;
+  margin-top: 10px;
+
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: bisque;
+    padding: 5px;
+
+    &__title {
+      width: 80%;
+      font-family: $sans-serif;
+    }
+
+    &__tools {
+      display: flex;
+      width: 20%;
+      flex-flow: row nowrap;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      &__delete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  &__divider {
+    display: flex;
+    align-self: center;
+    width: 99%;
+    border: solid 0.5px darkgray;
+  }
+
+  &__content {
+    display: flex;
+    writing-mode: horizontal-tb;
+    overflow-wrap: break-word;
+    hyphens: manual;
+    padding: 5px;
+  }
+
+}

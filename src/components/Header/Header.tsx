@@ -1,18 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Header.scss';
 import {Link} from "react-router-dom";
+import {ProfileButton} from "@components/ProfileButton/ProfileButton";
+
 
 export const Header: React.FC<unknown> = () => {
+    const [auth, setAuth] = useState(false);
     return (
         <header className="header">
-            <div className="header__logo"></div>
-            <div className="header__menu">
-                <Link to="#" className="header__menu__item">Мои цели</Link>
-                <Link to="#" className="header__menu__item">Мои задачи</Link>
-                <Link to="#" className="header__menu__item">Что-то ещё...</Link>
-            </div>
-            <div className="header__login__btn">
-                <Link className="header__login__btn__text" to="#" >Войти</Link>
+            <div className="main__container">
+                <div className="header__content">
+                    <Link to="/" className="header__logo"></Link>
+                    <div className="header__menu">
+                        <Link to="#" className="header__menu__item" onClick={() => setAuth(auth => !auth)}>Мои цели</Link>
+                        <Link to="#" className="header__menu__item">Мои задачи</Link>
+                        <Link to="#" className="header__menu__item">Взаимодействие</Link>
+                    </div>
+                    {auth ?
+                        <ProfileButton address={"/"} text={"Войти"} />
+                        :
+                        <ProfileButton address={"/"} text={"Профиль"} />
+                    }
+                </div>
             </div>
         </header>
     );

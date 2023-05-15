@@ -1,0 +1,103 @@
+@import '@styles/index.scss';
+
+.notes_panel {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background-color: #FFF;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 55px;
+  overflow: auto;
+
+  border: solid 2px darkgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+
+    width: 99%;
+
+    font-family: $sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__divider {
+    align-self: center;
+    width: 99%;
+    border: solid 1px darkgray;
+  }
+
+  &__new_note {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    min-height: 165px;
+    height: 20%;
+    margin-bottom: 10px;
+
+    &__input {
+      height: 65%;
+      width: 30%;
+      min-width: 200px;
+
+      &__title {
+        height: 20%;
+        width: 100%;
+        border: solid 1px darkgray;
+        border-radius: 5px;
+        margin-bottom: 5px;
+        padding: 2px 4px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        font-family: $sans-serif;
+      }
+
+      &__content {
+        height: 80%;
+        width: 100%;
+        resize: none;
+        border: solid 1px darkgray;
+        border-radius: 5px;
+        padding: 2px 4px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        font-family: $sans-serif;
+      }
+    }
+
+    &__button {
+      margin-top: 5px;
+      gap: 10px;
+      width: 50%;
+      height: 25px;
+      background: #0A84FF;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      font-family: $sans-serif;
+      text-decoration: none;
+      color: #FFF;
+    }
+
+  }
+
+}

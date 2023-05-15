@@ -1,0 +1,26 @@
+@import '@styles/index.scss';
+
+.profile__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 178px;
+  height: var(--header-height);
+  margin-right: var(--standart-margin);
+  background: #0A84FF;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: var(--standart-font-size);
+    font-family: $sans-serif;
+    text-decoration: none;
+    color: #FFF;
+  }
+}

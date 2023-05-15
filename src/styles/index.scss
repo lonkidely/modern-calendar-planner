@@ -22,3 +22,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+
+.main__container {
+  width: 80%;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+*::-webkit-scrollbar {
+  border: none;
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 5px solid transparent;
+  background-color: #aaa;
+  background-clip: content-box;
+  height: 10px;
+}

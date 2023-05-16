@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 import './styles/index.scss';
 import { MainPage } from "@views/MainPage/MainPage";
+import {MainLogin} from "@views/MainLogin/MainLogin";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,7 +13,8 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<MainPage />} />
+            <Route path="/kek" element={<MainPage />} />
+            <Route path="/" element={<MainLogin />} />
         </Routes>
     </BrowserRouter>
 );

@@ -1,0 +1,174 @@
+@import '@styles/index.scss';
+
+@mixin flex-window{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  height: 100%;
+  font-weight: normal;
+}
+
+.modal {
+  &__background {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgb(0 0 0 / 50%);
+    overflow-y: hidden;
+  }
+
+  &__window {
+    max-height: 450px;
+    height: 73vw;
+    min-height: 420px;
+  }
+
+  &__window__flex {
+    @include flex-window;
+    animation: 0.15s show ease;
+  }
+
+  &__cross {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 45px;
+    right: 87px;
+    fill: #444;
+    cursor: pointer;
+  }
+
+  &__header {
+    margin-bottom: 33px;
+    color: var(--main-color-text);
+    font-size: 26px;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+  }
+
+  &__wrapper__input {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+    width: 270px;
+    height: 55px;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    max-width: 289px;
+    width: 40vw;
+    min-width: 210px;
+    height: 29px;
+    border-radius: 4px;
+    color: var(--main-color-text);
+    background: #27292e;
+    opacity: 0.8;
+    border: 2px solid #27292e;
+    font-size: 12px;
+    padding-left: 15px;
+
+    &_red_border {
+      border: 2px solid var(--text-danger);
+    }
+
+    &__error {
+      width: 42vw;
+      height: 18px;
+      margin-top: 5px;
+      color: var(--text-danger);
+      font-size: var(--font-size-small);
+      max-width: 300px;
+    }
+
+    &__button-auth {
+      max-width: 310px;
+      width: 44vw;
+      min-width: 230px;
+      height: 35px;
+    }
+  }
+}
+
+.auth__wrapper{
+  @include flex-window;
+  max-width: 910px;
+  width: 95vw;
+  min-width: 310px;
+}
+
+.modal__login {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  border-radius: 30px;
+  background: #191a1d;
+  min-width: 300px;
+  width: 50%;
+  height: 100%;
+
+  .modal__flex__center__div {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+
+    .primary-btn-small-link {
+      background: #191a1d;
+      font-family: $font-family-small;
+      font-size: var(--font-size-normal);
+      color: var(--primary-color);
+    }
+
+    .modal__text__alternative__page {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-end;
+      align-items: center;
+      margin: 10px;
+      width: 55%;
+      white-space: nowrap;
+      font-size: 13px;
+      color: var(--main-color-text);
+      text-decoration: none;
+      z-index: 1;
+    }
+
+    .modal__login__switch__btn {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 10px;
+      width: 45%;
+      white-space: nowrap;
+      font-size: 12px;
+      text-decoration: none;
+      background: #191a1d;
+
+      .modal__login__switch__link {
+        text-decoration: none;
+        background: #191a1d;
+      }
+    }
+  }
+}

@@ -3,6 +3,30 @@ $sans-serif: "Mail Sans Roman Med", arial, sans-serif;
 html {
   --standart-margin: 52px;
   --standart-font-size: 15px;
+  overflow-x: hidden;
+
+  --main-shadow-color-light: rgb(0 0 0 / 20%);
+  --main-shadow-color-strong: rgb(0 0 0 / 40%);
+  --blackout-color: rgb(0 0 0);
+  --backgr-color: #121212;
+  --primary-color: #0A84FF;
+  --primary-color-hover: #1A84FF;
+  --secondary-color: rgb(86 86 86 / 50%);
+  --secondary-color-hover: rgb(177 177 177 / 35%);
+  --main-color-text: #fff;
+  --text-color-on-primary: #000;
+  --text-color-on-secondary: #fff;
+  --secondary-color-text: #A5A5A5;
+  --text-danger: #e72d2d;
+  --margin-left-login-btn: 72px;
+  --error-color: rgb(150 0 0);
+  --success-color: rgb(98 167 127);
+  --backgr-select-item: #fff;
+  --backgr-modal-review: rgb(43 43 46 / 80%);
+  --main-modal-color: #191a1d;
+  --font-size-big: 48px;
+  --font-size-normal: 15px;
+  --font-size-small: 13px;
 }
 
 header {
@@ -48,4 +72,48 @@ code {
   background-color: #aaa;
   background-clip: content-box;
   height: 10px;
+}
+
+$font-size-big: 20px;
+$font-size-med: 15px;
+$font-size-small: 15px;
+$border-radius-big: 6px;
+$border-radius-med: 6px;
+$border-radius-small: 4px;
+$font-family-big: "Mail Sans Roman Med";
+$font-family-med: "Mail Sans Roman Med";
+$font-family-small: "Mail Sans Roman";
+
+@mixin primary-animation-hover {
+  background-color: var(--primary-color-hover);
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+
+@mixin secondary-animation-hover {
+  background-color: var(--secondary-color-hover);
+  transition: 0.1s linear;
+  cursor: pointer;
+}
+
+@mixin common-btn-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  box-shadow: 0 4px 20px var(--main-shadow-color-strong);
+}
+
+.primary-btn-small {
+  @include common-btn-body;
+  background-color: var(--primary-color);
+  border-radius: $border-radius-small;
+  font-family: $font-family-small;
+  font-size: var(--font-size-normal);
+  color: var(--text-color-on-secondary);
+
+  &:hover {
+    @include primary-animation-hover;
+  }
 }

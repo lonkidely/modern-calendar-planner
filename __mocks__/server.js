@@ -5,6 +5,8 @@ const path = require('path');
 const app = express();
 
 app.use('/',express.static(path.resolve(__dirname, '../dist')));
+app.use('/login',express.static(path.resolve(__dirname, '../dist')));
+app.use('/signup',express.static(path.resolve(__dirname, '../dist')));
 
 const default_port = 80;
 let currentPort = process.argv[2]

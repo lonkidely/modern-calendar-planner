@@ -1,0 +1,55 @@
+@import '@styles/index.scss';
+
+.new_task_panel {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 420px;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 55px;
+  overflow: auto;
+  border: solid 2px darkgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+
+  /* плавный переход смещения панели */
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  transition: right 0.3s;
+
+  .new_task_linked_goal,
+  .new_goal_linked_user,
+  .new_task_start_date,
+  .new_task_end_date,
+  .new_task_title,
+  .new_task_description,
+  .new_task_priority,
+  .new_task_create_task_btn,
+  .new_task_close_panel_btn {
+    text-align: center;
+    width: 70%;
+    margin-bottom: 0.5rem;
+  }
+
+  .new_task_create_task_btn {
+    margin-top: 1.5rem;
+  }
+
+  .new_task_close_panel_btn {
+    margin-top: 1.5rem;
+  }
+
+  .new_task_description textarea {
+    resize: none;
+  }
+}
+
+.new_task_panel_hidden {
+  right: -500px;
+}

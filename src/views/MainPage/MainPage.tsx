@@ -4,6 +4,7 @@ import { Header } from '@components/Header/Header';
 import {NotesPanel} from "@components/NotesPanel/NotesPanel";
 import {RightPanel} from "@components/RightPanel/RightPanel";
 import {NewGoal} from "@components/NewGoal/NewGoal";
+import {NewTask} from "@components/NewTask/NewTask";
 
 export const MainPage = () => {
     return (
@@ -18,6 +19,7 @@ export const MainPage = () => {
                 </div>
                 <RightPanel />
                 <NewGoal />
+                <NewTask />
             </div>
         </div>
     );

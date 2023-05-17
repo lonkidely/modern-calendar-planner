@@ -3,6 +3,7 @@
 .notes_panel {
   position: fixed;
   z-index: 1;
+  left: 0;
   top: 0;
   bottom: 0;
   width: 280px;
@@ -15,6 +16,11 @@
   border: solid 2px darkgray;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+
+  /* плавный переход смещения панели */
+  -webkit-transition: left 0.3s;
+  -moz-transition: left 0.3s;
+  transition: left 0.3s;
 
   &__header {
     display: flex;
@@ -92,5 +98,8 @@
     }
 
   }
+}
 
+.notes_panel_hidden {
+  left: -300px !important;
 }

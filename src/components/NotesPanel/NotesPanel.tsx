@@ -4,7 +4,7 @@ import {Note} from "@components/Note/Note";
 
 export const NotesPanel: React.FC<unknown> = () => {
     return (
-        <div className="notes_panel">
+        <div className="notes_panel notes_panel_hidden">
             <form className="notes_panel__new_note">
                 <div className="notes_panel__header">Добавить заметку</div>
                 <input className="notes_panel__new_note__input__title" placeholder="Заголовок заметки..."/>

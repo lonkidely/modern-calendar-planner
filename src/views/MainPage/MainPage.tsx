@@ -2,6 +2,7 @@ import React from 'react';
 import './MainPage.scss';
 import { Header } from '@components/Header/Header';
 import {NotesPanel} from "@components/NotesPanel/NotesPanel";
+import {RightPanel} from "@components/RightPanel/RightPanel";
 
 export const MainPage = () => {
     return (
@@ -14,6 +15,7 @@ export const MainPage = () => {
                         Пока что пустая страница
                     </div>
                 </div>
+                <RightPanel />
             </div>
         </div>
     );

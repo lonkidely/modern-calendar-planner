@@ -1,0 +1,59 @@
+@import '@styles/index.scss';
+
+.right_panel {
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 280px;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 55px;
+  overflow: auto;
+  border: solid 2px darkgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  /* плавный переход смещения панели */
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  transition: right 0.3s;
+
+  &__buttons {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+
+    &__btn {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
+      width: 50%;
+      height: 35px;
+      background: #0A84FF;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      font-family: $sans-serif;
+      text-decoration: none;
+      color: #FFF;
+    }
+  }
+}
+
+.right_panel_hidden {
+  right: -300px;
+}

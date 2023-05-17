@@ -24,8 +24,8 @@
     overflow-y: hidden;
   }
 
-  &__window__login {
-    max-height: 450px;
+  &__window__signup {
+    max-height: 750px;
     height: 73vw;
     min-height: 420px;
   }
@@ -105,14 +105,14 @@
   }
 }
 
-.auth__wrapper{
+.auth__wrapper__signup{
   @include flex-window;
-  max-width: 910px;
+  max-width: 1060px;
   width: 95vw;
-  min-width: 310px;
+  min-width: 450px;
 }
 
-.modal__login {
+.modal__signup {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -153,7 +153,7 @@
       z-index: 1;
     }
 
-    .modal__login__switch__btn {
+    .modal__signup__switch__btn {
       display: flex;
       flex-flow: row;
       justify-content: flex-start;
@@ -165,7 +165,7 @@
       text-decoration: none;
       background: #191a1d;
 
-      .modal__login__switch__link {
+      .modal__signup__switch__link {
         text-decoration: none;
         background: #191a1d;
       }

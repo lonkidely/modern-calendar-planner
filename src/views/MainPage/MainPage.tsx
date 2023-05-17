@@ -3,6 +3,7 @@ import './MainPage.scss';
 import { Header } from '@components/Header/Header';
 import {NotesPanel} from "@components/NotesPanel/NotesPanel";
 import {RightPanel} from "@components/RightPanel/RightPanel";
+import {NewGoal} from "@components/NewGoal/NewGoal";
 
 export const MainPage = () => {
     return (
@@ -16,6 +17,7 @@ export const MainPage = () => {
                     </div>
                 </div>
                 <RightPanel />
+                <NewGoal />
             </div>
         </div>
     );

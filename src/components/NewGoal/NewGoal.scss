@@ -1,0 +1,49 @@
+@import '@styles/index.scss';
+
+.new_goal_panel {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 55px;
+  overflow: auto;
+  border: solid 2px darkgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+
+  /* плавный переход смещения панели */
+  -webkit-transition: right 0.3s;
+  -moz-transition: right 0.3s;
+  transition: right 0.3s;
+
+  .new_goal_start_date,
+  .new_goal_end_date,
+  .new_goal_title,
+  .new_goal_urgency,
+  .new_goal_importance,
+  .new_goal_create_goal_btn,
+  .new_goal_close_panel_btn {
+    text-align: center;
+    width: 70%;
+    margin-bottom: 0.5rem;
+  }
+
+  .new_goal_create_goal_btn {
+    margin-top: 1.5rem;
+  }
+
+  .new_goal_close_panel_btn {
+    margin-top: 1.5rem;
+  }
+}
+
+.new_goal_panel_hidden {
+  right: -400px;
+}

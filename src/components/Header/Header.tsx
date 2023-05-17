@@ -15,11 +15,12 @@ export const Header: React.FC<unknown> = () => {
                         <Link to="#" className="header__menu__item" onClick={() => setAuth(auth => !auth)}>Мои цели</Link>
                         <Link to="#" className="header__menu__item">Мои задачи</Link>
                         <Link to="#" className="header__menu__item">Взаимодействие</Link>
+                        {auth && <Link to="#" className="header__menu__item">Профиль</Link>}
                     </div>
-                    {auth ?
+                    {!auth ?
                         <ProfileButton address={"/"} text={"Войти"} />
                         :
-                        <ProfileButton address={"/"} text={"Профиль"} />
+                        <ProfileButton address={"/"} text={"Выйти"} />
                     }
                 </div>
             </div>

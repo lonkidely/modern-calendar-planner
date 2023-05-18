@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './NewTask.scss';
 import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
@@ -7,6 +7,9 @@ export const NewTask:React.FC<unknown> = () => {
     const closeNewTaskPanel = () => {
         document.getElementsByClassName('new_task_panel')[0].classList.add('new_task_panel_hidden');
     };
+
+    const [beginDateType, setBeginDateType] = useState('text');
+    const [endDateType, setEndDateType] = useState('text');
 
     return (
         <div className="new_task_panel new_task_panel_hidden">
@@ -27,12 +30,12 @@ export const NewTask:React.FC<unknown> = () => {
 
             <Form.Group className="new_task_start_date">
                 <Form.Label>Дата начала</Form.Label>
-                <Form.Control type="datetime-local" />
+                <Form.Control type={beginDateType} placeholder="Дата и время начала" onFocus={() => setBeginDateType('datetime-local')} />
             </Form.Group>
 
             <Form.Group className="new_task_end_date">
                 <Form.Label>Дата окончания</Form.Label>
-                <Form.Control type="datetime-local" />
+                <Form.Control type={endDateType} placeholder="Дата и время окончания" onFocus={() => setEndDateType('datetime-local')}/>
             </Form.Group>
 
             <Form.Group className="new_task_title">

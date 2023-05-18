@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './NewGoal.scss';
 import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
@@ -8,19 +8,22 @@ export const NewGoal:React.FC<unknown> = () => {
         document.getElementsByClassName('new_goal_panel')[0].classList.add('new_goal_panel_hidden');
     };
 
+    const [beginDateType, setBeginDateType] = useState('text');
+    const [endDateType, setEndDateType] = useState('text');
+
     return (
         <div className="new_goal_panel new_goal_panel_hidden">
             <Form.Group className="new_goal_start_date">
                 <Form.Label>Дата начала</Form.Label>
-                <Form.Control type="date" required pattern="\d{2}.\d{2}-\d{4}" />
+                <Form.Control type={beginDateType} placeholder="Выберите дату начала" onFocus={() => setBeginDateType('date')} />
             </Form.Group>
             <Form.Group className="new_goal_end_date">
                 <Form.Label>Дата окончания</Form.Label>
-                <Form.Control type="date" required pattern="\d{2}.\d{2}-\d{4}" />
+                <Form.Control type={endDateType} placeholder="Выберите дату окончания" onFocus={() => setEndDateType('date')} />
             </Form.Group>
             <Form.Group className="new_goal_title">
                 <Form.Label>Название цели</Form.Label>
-                <Form.Control type="text" />
+                <Form.Control type="text" placeholder="Введите название цели" />
             </Form.Group>
             <Form.Group className="new_goal_importance">
                 <Form.Label>Важность</Form.Label>

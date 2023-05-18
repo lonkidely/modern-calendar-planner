@@ -27,7 +27,12 @@ export const Signup: React.FC<unknown> = () => {
                                     <input type="text" maxLength={45} className="modal__input js-modal__input"
                                         placeholder="Отчество" />
                                 </div>
-                    
+
+                                <div className="modal__wrapper__input">
+                                    <input type="text" onFocus={e => e.target.type='date'}
+                                        className="modal__input js-modal__input" placeholder="Дата рождения"/>
+                                </div>
+
                                 <div className="modal__wrapper__input">
                                     <input type="text" maxLength={45} className="modal__input js-modal__input"
                                         placeholder="Логин" />

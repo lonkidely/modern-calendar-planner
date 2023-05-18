@@ -67,14 +67,14 @@
     align-items: center;
     width: 270px;
     height: 55px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   &__input {
     max-width: 289px;
     width: 40vw;
     min-width: 210px;
-    height: 29px;
+    height: 30px;
     border-radius: 4px;
     color: var(--main-color-text);
     background: #27292e;
@@ -97,7 +97,7 @@
     }
 
     &__button-auth {
-      max-width: 310px;
+      max-width: 289px;
       width: 44vw;
       min-width: 230px;
       height: 35px;

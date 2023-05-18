@@ -5,6 +5,7 @@ import {NotesPanel} from "@components/NotesPanel/NotesPanel";
 import {RightPanel} from "@components/RightPanel/RightPanel";
 import {NewGoal} from "@components/NewGoal/NewGoal";
 import {NewTask} from "@components/NewTask/NewTask";
+import {Calendar} from "@components/Calendar/Calendar";
 
 export const MainPage = () => {
     return (
@@ -14,7 +15,7 @@ export const MainPage = () => {
                 <NotesPanel />
                 <div className="main__container">
                     <div className="main_page_content">
-                        Пока что пустая страница
+                        <Calendar />
                     </div>
                 </div>
                 <RightPanel />

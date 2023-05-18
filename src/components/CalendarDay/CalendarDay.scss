@@ -1,0 +1,37 @@
+@import '@styles/index.scss';
+
+.calendar_day {
+  width: 8rem;
+  height: 8rem;
+  margin: 0;
+
+  .calendar_day_header {
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--main-color-text);
+  }
+}
+
+.calendar_day_inactive {
+  width: 8rem;
+  height: 8rem;
+  margin: 0;
+
+  .calendar_day_header {
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--main-color-text);
+  }
+}
+
+.calendar_day_today {
+  width: 8rem;
+  height: 8rem;
+  margin: 0;
+
+  .calendar_day_header {
+    text-align: center;
+    background-color: var(--text-danger);
+    color: var(--main-color-text);
+  }
+}

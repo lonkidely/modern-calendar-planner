@@ -1,0 +1,68 @@
+@import '@styles/index.scss';
+
+.calendar {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 56rem;
+  height: 53rem;
+  margin: 5px;
+
+  &__utils {
+    &__left_btn {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__current_month {
+      width: 100%;
+      height: 31px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__right_btn {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  table {
+    padding: 0;
+    margin: 0;
+
+    thead {
+      tr {
+        th {
+          text-align: center;
+          align-items: center;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        padding: 0;
+        margin: 0;
+      }
+
+      td {
+        width: 8rem;
+        height: 8rem;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+}

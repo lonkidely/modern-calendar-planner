@@ -6,7 +6,8 @@
       "@views/*": ["src/views/*"],
       "@assets/*":  ["src/assets/*"],
       "@icons/*":  ["src/assets/icons/*"],
-      "@styles/*":  ["src/styles/*"]
+      "@styles/*":  ["src/styles/*"],
+      "@custom_types/*": ["src/types/*"]
     },
     "target": "es5",
     "allowJs": true,

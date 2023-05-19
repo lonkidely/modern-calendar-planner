@@ -1,0 +1,12 @@
+@import '@styles/index.scss';
+
+.linked_tasks {
+  text-align: center;
+  width: 70%;
+  margin-top: 1rem;
+
+  &__divider {
+    height: 5px;
+    width: 100%;
+  }
+}

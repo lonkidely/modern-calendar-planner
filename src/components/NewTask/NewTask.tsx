@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './NewTask.scss';
 import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
+import {LinkedTasks} from "@components/LinkedTask/LinkedTasks";
 
 export const NewTask:React.FC<unknown> = () => {
     const closeNewTaskPanel = () => {
@@ -10,6 +11,16 @@ export const NewTask:React.FC<unknown> = () => {
 
     const [beginDateType, setBeginDateType] = useState('text');
     const [endDateType, setEndDateType] = useState('text');
+    const [tasks, setTasks] = useState([{title:'one', used:false}, {title:'two', used:false}, {title:'three', used:false}]);
+
+    const usingTask = (taskBefore, taskAfter:string) => {
+        setTasks(tasks => tasks.map(el => {
+            return el.title === taskBefore ? {title:el.title, used:false} : el;
+        }));
+        setTasks(tasks => tasks.map(el => {
+            return el.title === taskAfter ? {title:el.title, used:true} : el;
+        }));
+    };
 
     return (
         <div className="new_task_panel new_task_panel_hidden">
@@ -52,6 +63,10 @@ export const NewTask:React.FC<unknown> = () => {
                 <Form.Label>Приоритет</Form.Label>
                 <Form.Control type="text" placeholder="Введите численный приоритет" />
             </Form.Group>
+
+            <LinkedTasks tasks={tasks} update={usingTask} />
+
+            <LinkedTasks tasks={tasks} update={usingTask} />
 
             <Button variant="primary" className="new_task_create_task_btn">Создать задачу</Button>
 

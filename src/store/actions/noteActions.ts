@@ -12,7 +12,9 @@ export const fetchNotes = (userId:string) => {
             dispatch({type:NoteActionsType.FETCH_NOTES});
             const response = await axios.post(FETCH_NOTES_URL, {
                 "id": userId,
-            }, );
+            }, {
+                withCredentials: true,
+            });
             const res = response.data.map(note => {
                 return {
                     id:note["id"],
@@ -44,6 +46,8 @@ export const addNote = (note:Note, user:User) => {
                 "createdBy": {
                     "id":user.id
                 }
+            }, {
+                withCredentials: true,
             });
             const res: Note = {
                 id:response.data["id"],
@@ -67,6 +71,8 @@ export const removeNote = (note:Note) => {
             dispatch({type:NoteActionsType.REMOVE_NOTE});
             await axios.post(REMOVE_NOTE_URL, {
                 "id":note.id,
+            }, {
+                withCredentials: true,
             });
             dispatch({type:NoteActionsType.REMOVE_NOTE_SUCCESS, payload: note});
         } catch (e) {

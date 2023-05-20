@@ -1,10 +1,40 @@
 import React from 'react';
 import './Login.scss';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useActions} from "@hooks/useActions";
 
 export const Login: React.FC<unknown> = () => {
+    const navigate = useNavigate();
+    const closeLogin = (event) => {
+        const modalLogin = document.getElementsByClassName('modal__login')[0];
+        if (modalLogin.contains(event.target)) {
+            return;
+        }
+        navigate("/");
+    };
+
+    const {loginUser} = useActions();
+
+    const loginFunc = (event) => {
+        event.preventDefault();
+
+        const login = (document.querySelector('input[type=email]') as HTMLInputElement).value;
+        const password = (document.querySelector('input[type=password]') as HTMLInputElement).value;
+
+        if (login.trim() === '' || password.trim() === '') {
+            return;
+        }
+
+        loginUser(login, password);
+
+        (document.querySelector('input[type=email]') as HTMLInputElement).value = '';
+        (document.querySelector('input[type=password]') as HTMLInputElement).value = '';
+
+        navigate("/");
+    };
+
     return (
-        <div className="modal__background js-modal__background">
+        <div className="modal__background js-modal__background" onClick={closeLogin}>
             <div className="modal__window__login js-modal__window">
                 <div className="modal__window__flex js-modal__window__flex">
                     <div className="auth__wrapper">
@@ -23,7 +53,7 @@ export const Login: React.FC<unknown> = () => {
                                 </div>
 
                                 <button type="submit"
-                                    className="modal__input__button-auth primary-btn-small">Войти
+                                    className="modal__input__button-auth primary-btn-small" onClick={loginFunc}>Войти
                                 </button>
                             </form>
 

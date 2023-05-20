@@ -1,5 +1,5 @@
 import React from 'react';
-import './Note.scss';
+import './NoteComponent.scss';
 import {Note} from "@custom_types/Note";
 import {useActions} from "@hooks/useActions";
 

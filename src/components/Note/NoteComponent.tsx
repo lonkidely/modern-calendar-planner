@@ -1,18 +1,25 @@
 import React from 'react';
 import './Note.scss';
+import {Note} from "@custom_types/Note";
+import {useActions} from "@hooks/useActions";
 
-type NoteProps = {
-    title: string;
-    content: string;
-};
+type NoteComponentProps = {
+    note:Note,
+}
 
-export const Note: React.FC<NoteProps> = (props) => {
+export const NoteComponent: React.FC<NoteComponentProps> = (props:NoteComponentProps) => {
+    const {removeNote} = useActions();
+
+    const deleteNote = () => {
+        removeNote(props.note);
+    };
+
     return (
         <div className="note">
             <div className="note__header">
-                <div className="note__header__title">{props.title}</div>
+                <div className="note__header__title">{props.note.name}</div>
                 <div className="note__header__tools">
-                    <div className="note__header__tools__delete">
+                    <div className="note__header__tools__delete" onClick={deleteNote}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             className="bi bi-trash" viewBox="0 0 16 16">
                             <path
@@ -25,7 +32,7 @@ export const Note: React.FC<NoteProps> = (props) => {
             </div>
             <div className="note__divider"></div>
             <div className="note__content">
-                {props.content}
+                {props.note.description}
             </div>
         </div>
     );

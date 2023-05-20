@@ -16,6 +16,7 @@ export const MainPage = () => {
                 <div className="main__container">
                     <div className="main_page_content">
                         <Calendar />
+                        fetch()
                     </div>
                 </div>
                 <RightPanel />

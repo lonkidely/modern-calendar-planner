@@ -28,12 +28,12 @@ interface LoginUserAction {
     type: UserActionsType.LOGIN_USER;
 }
 
-interface LoginUserActionSuccess {
+interface LoginUserSuccessAction {
     type: UserActionsType.LOGIN_USER_SUCCESS;
     payload: User;
 }
 
-interface LoginUserActionError {
+interface LoginUserErrorAction {
     type: UserActionsType.LOGIN_USER_ERROR;
     payload: string;
 }
@@ -42,11 +42,11 @@ interface LogoutUserAction {
     type: UserActionsType.LOGOUT_USER;
 }
 
-interface LogoutUserActionSuccess {
+interface LogoutUserSuccessAction {
     type: UserActionsType.LOGOUT_USER_SUCCESS;
 }
 
-interface LogoutUserActionError {
+interface LogoutUserErrorAction {
     type: UserActionsType.LOGOUT_USER_ERROR;
     payload: string;
 }
@@ -55,12 +55,12 @@ interface AuthUserAction {
     type: UserActionsType.AUTH_USER;
 }
 
-interface AuthUserActionSuccess {
+interface AuthUserSuccessAction {
     type: UserActionsType.AUTH_USER_SUCCESS;
     payload: User;
 }
 
-interface AuthUserActionError {
+interface AuthUserErrorAction {
     type: UserActionsType.AUTH_USER_ERROR;
     payload: string;
 }
@@ -69,17 +69,17 @@ interface SignupUserAction {
     type: UserActionsType.SIGNUP_USER;
 }
 
-interface SignupUserActionSuccess {
+interface SignupUserSuccessAction {
     type: UserActionsType.SIGNUP_USER_SUCCESS;
     payload: User;
 }
 
-interface SignupUserActionError {
+interface SignupUserErrorAction {
     type: UserActionsType.SIGNUP_USER_ERROR;
     payload: string;
 }
 
-export type UserAction = LoginUserAction | LoginUserActionSuccess | LoginUserActionError |
-    LogoutUserAction | LogoutUserActionSuccess | LogoutUserActionError |
-    AuthUserAction | AuthUserActionSuccess | AuthUserActionError |
-    SignupUserAction | SignupUserActionSuccess | SignupUserActionError
+export type UserAction = LoginUserAction | LoginUserSuccessAction | LoginUserErrorAction |
+    LogoutUserAction | LogoutUserSuccessAction | LogoutUserErrorAction |
+    AuthUserAction | AuthUserSuccessAction | AuthUserErrorAction |
+    SignupUserAction | SignupUserSuccessAction | SignupUserErrorAction

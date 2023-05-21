@@ -41,7 +41,7 @@ export const Header: React.FC<unknown> = () => {
                 <div className="header__content">
                     <Link to="/" className="header__logo"></Link>
                     <div className="header__menu">
-                        <Link to="#" className="header__menu__item">Мои цели</Link>
+                        <Link to="/goals" className="header__menu__item">Мои цели</Link>
                         <Link to="#" className="header__menu__item">Мои задачи</Link>
                         <Link to="#" className="header__menu__item">Взаимодействие</Link>
                         {user !== null && <Link to="#" className="header__menu__item">Профиль</Link>}

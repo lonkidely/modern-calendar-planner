@@ -1,20 +1,31 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './MainLogin.scss';
 import { Header } from '@components/Header/Header';
-import {NotesPanel} from "@components/NotesPanel/NotesPanel";
 import {Login} from "@components/Login/Login";
+import {useTypedSelector} from "@hooks/useTypedSelector";
+import {useActions} from "@hooks/useActions";
+import {useNavigate} from "react-router-dom";
 
 export const MainLogin = () => {
+    const {user} = useTypedSelector(state => state.user);
+    const {authUser} = useActions();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        authUser();
+    }, []);
+
+    useEffect(() => {
+        if (!user) {
+            return;
+        }
+        navigate('/');
+    },[user]);
+
     return (
         <div className="main_page">
             <Header />
             <div className="main">
-                <NotesPanel />
-                <div className="main__container">
-                    <div className="main_login_content">
-                        Пока что пустая страница
-                    </div>
-                </div>
                 <Login />
             </div>
         </div>

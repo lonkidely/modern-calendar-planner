@@ -42,4 +42,20 @@
     }
   }
 
+  &__panel_buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+
+    &__btn {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      color: var(--main-color-text);
+    }
+  }
 }

@@ -1,4 +1,4 @@
-export const URL = 'https://localhost';
+export const URL = 'https://185.22.232.87';
 
 export const FETCH_NOTES_URL = URL + '/GetNotes';
 export const ADD_NOTE_URL = URL + '/CreateNotes';

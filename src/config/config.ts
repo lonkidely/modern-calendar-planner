@@ -13,3 +13,8 @@ export const CREATE_GOAL_URL = URL + '/CreateTarget';
 export const DELETE_GOAL_URL = URL + '/DeleteTarget';
 export const CHANGE_GOAL_URL = URL + '/ChangeTarget';
 export const GET_GOALS_URL = URL + '/MyTargets';
+
+export const CREATE_TASK_URL = URL + '/Tasks/AddTask';
+export const GET_TASKS_URL = URL + '/MyTasks';
+export const EDIT_TASK_URL = URL + 'EditTask';
+export const DELETE_TASK_URL = URL + 'DeleteTask';

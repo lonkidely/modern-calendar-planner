@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import './LinkedTasks.scss';
 import {Form} from 'react-bootstrap';
-import {TaskProps} from '@custom_types/TaskProps';
+import {TaskProps} from "@custom_types/TaskProps";
 
 
-type LinkedTasksProps = {
+export type LinkedTasksProps = {
     tasks: TaskProps[];
     update: (taskBefore, taskAfter:string) => void;
 };
@@ -20,7 +20,7 @@ export const LinkedTasks:React.FC<LinkedTasksProps> = (props: LinkedTasksProps) 
             }}>
                 <option value={"default"}>Связанная задача</option>
                 {props.tasks.map((val, key) => {
-                    return !val.used || value === val.title ? <option key={key} value={val.title}>{val.title}</option> : null;
+                    return !val.used || value === val.task.title ? <option key={key} value={val.task.title}>{val.task.title}</option> : null;
                 })}
             </Form.Select>
             <div className="linked_tasks__divider"></div>

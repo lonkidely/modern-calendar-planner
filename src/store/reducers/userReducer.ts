@@ -16,14 +16,14 @@ export const userReducer = (state = initialState, action:UserAction):UserState =
         return {...state, loading: false, error: action.payload};
 
     case UserActionsType.LOGOUT_USER:
-        return {...state, loading: true, error: null, user: null};
+        return {...state, loading: true, error: null};
     case UserActionsType.LOGOUT_USER_SUCCESS:
         return {...state, loading: false, error: null, user: null};
     case UserActionsType.LOGOUT_USER_ERROR:
         return {...state, loading: false, error: action.payload};
 
     case UserActionsType.AUTH_USER:
-        return {...state, loading: true, error: null, user: null};
+        return {...state, loading: true, error: null};
     case UserActionsType.AUTH_USER_SUCCESS:
         return {...state, loading: false, error: null, user: action.payload};
     case UserActionsType.AUTH_USER_ERROR:

@@ -9,21 +9,21 @@ const initialState: GoalsState = {
 export const goalsReducer = (state = initialState, action:GoalsAction): GoalsState => {
     switch (action.type) {
     case GoalsActionsType.CREATE_GOAL:
-        return {...state, loading: true, error: null, goals: []};
+        return {...state, loading: true, error: null};
     case GoalsActionsType.CREATE_GOAL_SUCCESS:
         return {...state, loading: false, error: null, goals: [...state.goals, action.payload]};
     case GoalsActionsType.CREATE_GOAL_ERROR:
         return {...state, loading: false, error: action.payload};
 
     case GoalsActionsType.DELETE_GOAL:
-        return {...state, loading: true, error: null, goals:[]};
+        return {...state, loading: true, error: null};
     case GoalsActionsType.DELETE_GOAL_SUCCESS:
         return {...state, loading: false, error: null, goals: state.goals.filter(goal => goal.id !== action.payload.id)};
     case GoalsActionsType.DELETE_GOAL_ERROR:
         return {...state, loading: false, error: action.payload};
         
     case GoalsActionsType.CHANGE_GOAL:
-        return {...state, loading: true, error: null, goals: []};
+        return {...state, loading: true, error: null};
     case GoalsActionsType.CHANGE_GOAL_SUCCESS:
         return {...state, loading: false, error: null, goals: state.goals.map(goal => goal.id === action.payload.id ? action.payload : goal)};
     case GoalsActionsType.CHANGE_GOAL_ERROR:

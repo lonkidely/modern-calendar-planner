@@ -8,6 +8,7 @@ app.use('/',express.static(path.resolve(__dirname, '../dist')));
 app.use('/login',express.static(path.resolve(__dirname, '../dist')));
 app.use('/signup',express.static(path.resolve(__dirname, '../dist')));
 app.use('/goals',express.static(path.resolve(__dirname, '../dist')));
+app.use('/tasks',express.static(path.resolve(__dirname, '../dist')));
 
 const default_port = 80;
 let currentPort = process.argv[2]

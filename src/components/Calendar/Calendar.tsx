@@ -48,6 +48,7 @@ export const Calendar:React.FC<unknown> = () => {
     type calendarDay = {
         day:number;
         type:string;
+        countTasks:number;
     };
     enum typeOfCalendarDay {
         active = "calendar_day",
@@ -57,18 +58,18 @@ export const Calendar:React.FC<unknown> = () => {
 
     let calendarMonth:calendarDay[] = [];
     for (let i = lastDayOfPrevMonth - (firstDayOfMonth === 0 ? 7 : firstDayOfMonth) + 2; i <= lastDayOfPrevMonth; i++) {
-        calendarMonth = [...calendarMonth, {day:i, type:typeOfCalendarDay.inactive}];
+        calendarMonth = [...calendarMonth, {day:i, type:typeOfCalendarDay.inactive, countTasks: 0}];
     }
     for (let i = 1; i <= lastDayOfMonth; i++) {
-        calendarMonth = [...calendarMonth, {day:i, type:typeOfCalendarDay.active}];
+        calendarMonth = [...calendarMonth, {day:i, type:typeOfCalendarDay.active, countTasks: 0}];
     }
     for (let i = 0; i < 7 - (lastDayOfWeekCurrentMonth === 0 ? 7 : lastDayOfWeekCurrentMonth); i++) {
-        calendarMonth = [...calendarMonth, {day:1 + i, type:typeOfCalendarDay.inactive}];
+        calendarMonth = [...calendarMonth, {day:1 + i, type:typeOfCalendarDay.inactive, countTasks: 0}];
     }
     if (calendarMonth.length < 42) {
         for (let i = 7 - (lastDayOfWeekCurrentMonth === 0 ? 7 : lastDayOfWeekCurrentMonth);
             i < 7 - (lastDayOfWeekCurrentMonth === 0 ? 7 : lastDayOfWeekCurrentMonth) + 7; i++) {
-            calendarMonth = [...calendarMonth, {day:7 + i, type:typeOfCalendarDay.inactive}];
+            calendarMonth = [...calendarMonth, {day:7 + i, type:typeOfCalendarDay.inactive, countTasks: 0}];
         }
     }
     if (currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) {

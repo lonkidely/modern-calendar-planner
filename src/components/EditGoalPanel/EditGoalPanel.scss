@@ -1,0 +1,43 @@
+.edit_goal_panel {
+  position: fixed;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 0;
+  top: 0;
+  z-index: 2;
+  width: 50%;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 55px;
+  overflow: auto;
+  border: solid 2px darkgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+
+  .edit_goal_start_date,
+  .edit_goal_end_date,
+  .edit_goal_title,
+  .edit_goal_urgency,
+  .edit_goal_importance,
+  .edit_goal_create_goal_btn,
+  .edit_goal_close_panel_btn {
+    text-align: center;
+    width: 70%;
+    margin-bottom: 0.5rem;
+  }
+
+  .edit_goal_create_goal_btn {
+    margin-top: 1.5rem;
+  }
+
+  .edit_goal_close_panel_btn {
+    margin-top: 1.5rem;
+  }
+}
+
+.edit_goal_panel_hidden {
+  left: -1000px;
+}

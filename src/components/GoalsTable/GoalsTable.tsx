@@ -4,7 +4,7 @@ import {useTypedSelector} from "@hooks/useTypedSelector";
 import {useActions} from "@hooks/useActions";
 import './GoalsTable.scss';
 
-export const GoalsTable = () => {
+export const GoalsTable = ({selGoal}) => {
     const {user} = useTypedSelector(state => state.user);
     const {goals} = useTypedSelector(state => state.goals);
 
@@ -16,6 +16,14 @@ export const GoalsTable = () => {
             getGoals();
         }
     }, []);
+
+    const selectTarget = (event) => {
+        event.preventDefault();
+
+        selGoal(goals.filter(el => el.id === event.target.id)[0]);
+
+        document.getElementsByClassName('edit_goal_panel')[0].classList.remove('edit_goal_panel_hidden');
+    };
 
     return (
         user
@@ -42,7 +50,7 @@ export const GoalsTable = () => {
                                 const endDay = goal.endDate.getDate();
                             
                                 return <tr key={key}>
-                                    <td>{goal.title}</td>
+                                    <td><a id={goal.id} href='#' onClick={selectTarget}>{goal.title}</a></td>
                                     <td>{goal.important === 0 ? 'Важная' : 'Неважная'}</td>
                                     <td>{goal.urgency === 0 ? 'Срочная' : 'Несрочная'}</td>
                                     <td>{beginDay < 10 ? `0${beginDay}` : beginDay}.{beginMonth < 10 ? `0${beginMonth}` : beginMonth}.{beginYear}</td>

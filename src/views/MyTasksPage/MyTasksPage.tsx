@@ -8,6 +8,9 @@ import {RightPanel} from "@components/RightPanel/RightPanel";
 import {NewGoal} from "@components/NewGoal/NewGoal";
 import {NewTask} from "@components/NewTask/NewTask";
 import {NotesPanel} from "@components/NotesPanel/NotesPanel";
+import {ToastInfo} from "@components/ToastInfo/ToastInfo";
+import {ToastWarning} from "@components/ToastWarning/ToastWarning";
+import {ToastSuccess} from "@components/ToastSuccess/ToastSuccess";
 
 export const MyTasksPage = () => {
     const {user} = useTypedSelector(state => state.user);
@@ -31,6 +34,9 @@ export const MyTasksPage = () => {
             {user && <RightPanel />}
             {user && <NewGoal />}
             {user && <NewTask />}
+            <ToastInfo />
+            <ToastWarning />
+            <ToastSuccess />
         </div>
     );
 };

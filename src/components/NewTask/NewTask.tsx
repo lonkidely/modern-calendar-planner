@@ -19,12 +19,22 @@ export const NewTask:React.FC<unknown> = () => {
         document.getElementsByClassName('new_task_panel')[0].classList.add('new_task_panel_hidden');
     };
 
-    const [beginDateType, setBeginDateType] = useState('text');
-    const [endDateType, setEndDateType] = useState('text');
     const [taskList, setTaskList] = useState(tasks.map(task => {
         const newTaskProp: TaskProps = {task: task, used: false};
         return newTaskProp;
     }));
+
+    const padTo2Digits = (num:number) => {
+        return num.toString().padStart(2, '0');
+    };
+
+    const formatDate = (date:Date)=> {
+        return ''.concat([
+            date.getFullYear(),
+            padTo2Digits(date.getMonth() + 1),
+            padTo2Digits(date.getDate()),
+        ].join('-'), ' ', [padTo2Digits(date.getHours()), padTo2Digits(date.getMinutes())].join(':'));
+    };
 
     const usingTask = (taskBefore, taskAfter:string) => {
         setTaskList(tasks => tasks.map(el => {
@@ -69,8 +79,8 @@ export const NewTask:React.FC<unknown> = () => {
 
         (document.getElementById('new_task_target') as HTMLInputElement).value = '';
         (document.getElementById('new_task_email') as HTMLInputElement).value = '';
-        (document.getElementById('new_task_beginDate') as HTMLInputElement).value = '';
-        (document.getElementById('new_task_endDate') as HTMLInputElement).value = '';
+        (document.getElementById('new_task_beginDate') as HTMLInputElement).value = formatDate(new Date());
+        (document.getElementById('new_task_endDate') as HTMLInputElement).value = formatDate(new Date());
         (document.getElementById('new_task_title') as HTMLInputElement).value = '';
         (document.getElementById('new_task_description') as HTMLInputElement).value = '';
         (document.getElementById('new_task_priority') as HTMLInputElement).value = '';
@@ -101,12 +111,12 @@ export const NewTask:React.FC<unknown> = () => {
 
             <Form.Group className="new_task_start_date">
                 <Form.Label>Дата начала</Form.Label>
-                <Form.Control id="new_task_beginDate" type={beginDateType} placeholder="Дата и время начала" onFocus={() => setBeginDateType('datetime-local')} />
+                <Form.Control id="new_task_beginDate" type={'datetime-local'} defaultValue={formatDate(new Date())} />
             </Form.Group>
 
             <Form.Group className="new_task_end_date">
                 <Form.Label>Дата окончания</Form.Label>
-                <Form.Control id="new_task_endDate" type={endDateType} placeholder="Дата и время окончания" onFocus={() => setEndDateType('datetime-local')}/>
+                <Form.Control id="new_task_endDate" type={'datetime-local'} defaultValue={formatDate(new Date())} />
             </Form.Group>
 
             <Form.Group className="new_task_title">

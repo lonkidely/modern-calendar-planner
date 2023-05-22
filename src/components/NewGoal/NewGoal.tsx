@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './NewGoal.scss';
 import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
@@ -11,8 +11,17 @@ export const NewGoal:React.FC<unknown> = () => {
         document.getElementsByClassName('new_goal_panel')[0].classList.add('new_goal_panel_hidden');
     };
 
-    const [beginDateType, setBeginDateType] = useState('text');
-    const [endDateType, setEndDateType] = useState('text');
+    const padTo2Digits = (num:number) => {
+        return num.toString().padStart(2, '0');
+    };
+
+    const formatDate = (date:Date)=> {
+        return [
+            date.getFullYear(),
+            padTo2Digits(date.getMonth() + 1),
+            padTo2Digits(date.getDate()),
+        ].join('-');
+    };
 
     const createNewGoal = (event) => {
         event.preventDefault();
@@ -34,8 +43,8 @@ export const NewGoal:React.FC<unknown> = () => {
         showSuccess();
         createGoal(newGoal);
 
-        (document.getElementById('new_goal_beginDate') as HTMLInputElement).value = '';
-        (document.getElementById('new_goal_endDate') as HTMLInputElement).value = '';
+        (document.getElementById('new_goal_beginDate') as HTMLInputElement).value = formatDate(new Date());
+        (document.getElementById('new_goal_endDate') as HTMLInputElement).value = formatDate(new Date());
         (document.getElementById('new_goal_title') as HTMLInputElement).value = '';
         (document.getElementById('new_goal_important') as HTMLSelectElement).value = "1";
         (document.getElementById('new_goal_urgency') as HTMLSelectElement).value = "1";
@@ -45,11 +54,11 @@ export const NewGoal:React.FC<unknown> = () => {
         <div className="new_goal_panel new_goal_panel_hidden">
             <Form.Group className="new_goal_start_date">
                 <Form.Label>Дата начала</Form.Label>
-                <Form.Control id="new_goal_beginDate" type={beginDateType} placeholder="Выберите дату начала" onFocus={() => setBeginDateType('date')} />
+                <Form.Control id="new_goal_beginDate" type={'date'} defaultValue={formatDate(new Date())} />
             </Form.Group>
             <Form.Group className="new_goal_end_date">
                 <Form.Label>Дата окончания</Form.Label>
-                <Form.Control id="new_goal_endDate" type={endDateType} placeholder="Выберите дату окончания" onFocus={() => setEndDateType('date')} />
+                <Form.Control id="new_goal_endDate" type={'date'} defaultValue={formatDate(new Date())} />
             </Form.Group>
             <Form.Group className="new_goal_title">
                 <Form.Label>Название цели</Form.Label>

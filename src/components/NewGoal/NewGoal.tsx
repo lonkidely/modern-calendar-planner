@@ -6,7 +6,7 @@ import {Goal} from "@custom_types/Goal";
 import {useActions} from "@hooks/useActions";
 
 export const NewGoal:React.FC<unknown> = () => {
-    const {createGoal} = useActions();
+    const {createGoal, showSuccess} = useActions();
     const closeNewGoalPanel = () => {
         document.getElementsByClassName('new_goal_panel')[0].classList.add('new_goal_panel_hidden');
     };
@@ -31,6 +31,7 @@ export const NewGoal:React.FC<unknown> = () => {
             urgency:urgency
         };
 
+        showSuccess();
         createGoal(newGoal);
 
         (document.getElementById('new_goal_beginDate') as HTMLInputElement).value = '';

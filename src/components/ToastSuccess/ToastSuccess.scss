@@ -1,0 +1,13 @@
+@import '@styles/index.scss';
+
+.toast_success {
+  height: 160px;
+  width: 320px;
+  color: var(--main-color-text);
+  font: $font-family-big;
+  font-size: var(--font-size-big);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}

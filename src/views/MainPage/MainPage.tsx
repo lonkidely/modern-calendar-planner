@@ -8,6 +8,9 @@ import {NewTask} from "@components/NewTask/NewTask";
 import {Calendar} from "@components/Calendar/Calendar";
 import {useActions} from "@hooks/useActions";
 import {useTypedSelector} from "@hooks/useTypedSelector";
+import {ToastInfo} from "@components/ToastInfo/ToastInfo";
+import {ToastWarning} from "@components/ToastWarning/ToastWarning";
+import {ToastSuccess} from "@components/ToastSuccess/ToastSuccess";
 
 export const MainPage = () => {
     const {user} = useTypedSelector(state => state.user);
@@ -30,6 +33,9 @@ export const MainPage = () => {
                 {user !== null && <RightPanel />}
                 {user !== null && <NewGoal />}
                 {user !== null && <NewTask />}
+                <ToastInfo />
+                <ToastWarning />
+                <ToastSuccess />
             </div>
         </div>
     );

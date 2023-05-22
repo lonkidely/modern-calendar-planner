@@ -11,7 +11,7 @@ import {Goal} from "@custom_types/Goal";
 import {User} from "@custom_types/User";
 
 export const NewTask:React.FC<unknown> = () => {
-    const {createTask} = useActions();
+    const {createTask, showSuccess} = useActions();
     const {goals} = useTypedSelector(state => state.goals);
     const {tasks, loading} = useTypedSelector(state => state.tasks);
 
@@ -64,6 +64,7 @@ export const NewTask:React.FC<unknown> = () => {
             description: description
         };
 
+        showSuccess();
         createTask(newTask);
 
         (document.getElementById('new_task_target') as HTMLInputElement).value = '';

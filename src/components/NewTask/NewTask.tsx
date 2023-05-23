@@ -15,6 +15,9 @@ export const NewTask:React.FC<unknown> = () => {
     const {goals} = useTypedSelector(state => state.goals);
     const {tasks, loading} = useTypedSelector(state => state.tasks);
 
+    const [taskFrom, setTaskFrom] = useState(null);
+    const [taskTo, setTaskTo] = useState(null);
+
     const closeNewTaskPanel = () => {
         document.getElementsByClassName('new_task_panel')[0].classList.add('new_task_panel_hidden');
     };
@@ -71,13 +74,14 @@ export const NewTask:React.FC<unknown> = () => {
             startDate: beginDate,
             endDate: endDate,
             priority: priority,
-            description: description
+            description: description,
+            toTask:taskTo?.id.length > 1 ? taskTo : null,
+            fromTask:taskFrom?.id.length > 1 ? taskFrom : null
         };
 
         showSuccess();
         createTask(newTask);
 
-        (document.getElementById('new_task_target') as HTMLInputElement).value = '';
         (document.getElementById('new_task_email') as HTMLInputElement).value = '';
         (document.getElementById('new_task_beginDate') as HTMLInputElement).value = formatDate(new Date());
         (document.getElementById('new_task_endDate') as HTMLInputElement).value = formatDate(new Date());
@@ -134,9 +138,9 @@ export const NewTask:React.FC<unknown> = () => {
                 <Form.Control id="new_task_priority" type="text" placeholder="Введите численный приоритет" />
             </Form.Group>
 
-            {!loading && tasks.length > 0 && <LinkedTasks tasks={taskList} update={usingTask} />}
+            {!loading && tasks.length > 0 && <LinkedTasks setTask={setTaskFrom} type={"before"} tasks={taskList} update={usingTask} />}
 
-            {!loading && tasks.length > 1 && <LinkedTasks tasks={taskList} update={usingTask} />}
+            {!loading && tasks.length > 1 && <LinkedTasks setTask={setTaskTo} type={"after"} tasks={taskList} update={usingTask} />}
 
             <Button variant="primary" className="new_task_create_task_btn" onClick={createNewTask}>Создать задачу</Button>
 

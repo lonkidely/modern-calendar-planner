@@ -1,0 +1,51 @@
+@import '@styles/index.scss';
+
+.edit_task_panel {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 60%;
+  background-color: #FFF;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin-top: 55px;
+  overflow: auto;
+  border: solid 2px darkgray;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 10px;
+
+  .edit_task_linked_goal,
+  .edit_goal_linked_user,
+  .edit_task_start_date,
+  .edit_task_end_date,
+  .edit_task_title,
+  .edit_task_description,
+  .edit_task_priority,
+  .edit_task_target,
+  .edit_task_status,
+  .edit_task_create_task_btn,
+  .edit_task_close_panel_btn {
+    text-align: center;
+    width: 70%;
+    margin-bottom: 0.5rem;
+  }
+
+  .edit_task_create_task_btn {
+    margin-top: 1.5rem;
+  }
+
+  .edit_task_close_panel_btn {
+    margin-top: 1.5rem;
+  }
+
+  .edit_task_description textarea {
+    resize: none;
+  }
+}
+
+.edit_task_panel_hidden {
+  right: -1500px;
+}

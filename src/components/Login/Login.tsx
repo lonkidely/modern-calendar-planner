@@ -44,7 +44,7 @@ export const Login: React.FC<unknown> = () => {
                             <form className="modal__form js-modal__form" noValidate>
                                 <div className="modal__wrapper__input js-modal__wrapper__input">
                                     <input type="email" maxLength={45} className="modal__input js-modal__input"
-                                        placeholder="Введите логин или адрес электронной почты" />
+                                        placeholder="Введите логин" />
                                 </div>
 
                                 <div className="modal__wrapper__input js-modal__wrapper__input" id="login_password">

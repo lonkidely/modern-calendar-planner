@@ -4,7 +4,7 @@ import {useTypedSelector} from "@hooks/useTypedSelector";
 import {useActions} from "@hooks/useActions";
 import './TasksTable.scss';
 
-export const TasksTable = () => {
+export const TasksTable = ({selTask}) => {
     const {user} = useTypedSelector(state => state.user);
     const {tasks} = useTypedSelector(state => state.tasks);
 
@@ -16,6 +16,14 @@ export const TasksTable = () => {
             getTasks();
         }
     }, []);
+
+    const openEditTaskPanel = (event) => {
+        event.preventDefault();
+
+        selTask(tasks.filter(task => task.id === event.target.id)[0]);
+
+        document.getElementsByClassName('edit_task_panel')[0].classList.remove('edit_task_panel_hidden');
+    };
 
     return (
         user
@@ -50,7 +58,7 @@ export const TasksTable = () => {
                                 const performer = task.performer.email;
                                 return <tr key={key}>
                                     <td>{goal}</td>
-                                    <td>{task.title}</td>
+                                    <td><a id={task.id} href='#' onClick={openEditTaskPanel}>{task.title}</a></td>
                                     <td>{task.description}</td>
                                     <td>{beginHour < 10 ? `0${beginHour}` : beginHour}:{beginMinutes < 10 ? `0${beginMinutes}` : beginMinutes} {beginDay < 10 ? `0${beginDay}` : beginDay}.{beginMonth < 10 ? `0${beginMonth}` : beginMonth}.{beginYear}
                                     </td>

@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import './MainLogin.scss';
 import { Header } from '@components/Header/Header';
-import {Login} from "@components/Login/Login";
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {useActions} from "@hooks/useActions";
-import {useNavigate} from "react-router-dom";
+import {Login} from '@components/Login/Login';
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {useActions} from '@hooks/useActions';
+import {useNavigate} from 'react-router-dom';
 
 export const MainLogin = () => {
     const {user} = useTypedSelector(state => state.user);

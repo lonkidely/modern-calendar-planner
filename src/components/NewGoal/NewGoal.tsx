@@ -2,8 +2,8 @@ import React from 'react';
 import './NewGoal.scss';
 import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
-import {Goal} from "@custom_types/Goal";
-import {useActions} from "@hooks/useActions";
+import {Goal} from '@custom_types/Goal';
+import {useActions} from '@hooks/useActions';
 
 export const NewGoal:React.FC<unknown> = () => {
     const {createGoal, showSuccess} = useActions();
@@ -46,8 +46,8 @@ export const NewGoal:React.FC<unknown> = () => {
         (document.getElementById('new_goal_beginDate') as HTMLInputElement).value = formatDate(new Date());
         (document.getElementById('new_goal_endDate') as HTMLInputElement).value = formatDate(new Date());
         (document.getElementById('new_goal_title') as HTMLInputElement).value = '';
-        (document.getElementById('new_goal_important') as HTMLSelectElement).value = "1";
-        (document.getElementById('new_goal_urgency') as HTMLSelectElement).value = "1";
+        (document.getElementById('new_goal_important') as HTMLSelectElement).value = '1';
+        (document.getElementById('new_goal_urgency') as HTMLSelectElement).value = '1';
     };
 
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.scss';
-import {Link, useNavigate} from "react-router-dom";
-import {useActions} from "@hooks/useActions";
+import {Link, useNavigate} from 'react-router-dom';
+import {useActions} from '@hooks/useActions';
 
 export const Login: React.FC<unknown> = () => {
     const navigate = useNavigate();
@@ -10,7 +10,7 @@ export const Login: React.FC<unknown> = () => {
         if (modalLogin.contains(event.target)) {
             return;
         }
-        navigate("/");
+        navigate('/');
     };
 
     const {loginUser} = useActions();
@@ -30,7 +30,7 @@ export const Login: React.FC<unknown> = () => {
         (document.querySelector('input[type=email]') as HTMLInputElement).value = '';
         (document.querySelector('input[type=password]') as HTMLInputElement).value = '';
 
-        navigate("/");
+        navigate('/');
     };
 
     return (

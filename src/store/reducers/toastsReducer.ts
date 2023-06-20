@@ -1,4 +1,4 @@
-import {ToastsState, ToastsActionsType, ToastsAction} from "../types/toast";
+import {ToastsState, ToastsActionsType, ToastsAction} from '../types/toast';
 
 const initialState: ToastsState = {
     warning: false,

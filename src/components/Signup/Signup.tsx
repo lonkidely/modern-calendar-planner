@@ -1,9 +1,9 @@
-import {Link, useNavigate} from "react-router-dom";
-import React from "react";
+import {Link, useNavigate} from 'react-router-dom';
+import React from 'react';
 
 import './Signup.scss';
-import {useActions} from "@hooks/useActions";
-import {User} from "@custom_types/User";
+import {useActions} from '@hooks/useActions';
+import {User} from '@custom_types/User';
 
 export const Signup: React.FC<unknown> = () => {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ export const Signup: React.FC<unknown> = () => {
         if (modalForm.contains(event.target)) {
             return;
         }
-        navigate("/");
+        navigate('/');
     };
 
     const {signupUser} = useActions();
@@ -22,7 +22,7 @@ export const Signup: React.FC<unknown> = () => {
 
         const user:User = {};
 
-        const lastname = (document.getElementById("lastname") as HTMLInputElement).value;
+        const lastname = (document.getElementById('lastname') as HTMLInputElement).value;
         const firstname = (document.getElementById('firstname') as HTMLInputElement).value;
         const secondname = (document.getElementById('secondname') as HTMLInputElement).value;
         const birthday = new Date((document.getElementById('birthday') as HTMLInputElement).value);
@@ -45,7 +45,7 @@ export const Signup: React.FC<unknown> = () => {
 
         signupUser(user);
 
-        (document.getElementById("lastname") as HTMLInputElement).value = '';
+        (document.getElementById('lastname') as HTMLInputElement).value = '';
         (document.getElementById('firstname') as HTMLInputElement).value = '';
         (document.getElementById('secondname') as HTMLInputElement).value = '';
         (document.getElementById('birthday') as HTMLInputElement).value = '';

@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import './MainSignup.scss';
 import { Header } from '@components/Header/Header';
-import {Signup} from "@components/Signup/Signup";
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {useActions} from "@hooks/useActions";
-import {useNavigate} from "react-router-dom";
+import {Signup} from '@components/Signup/Signup';
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {useActions} from '@hooks/useActions';
+import {useNavigate} from 'react-router-dom';
 
 export const MainSignup = () => {
     const {user} = useTypedSelector(state => state.user);

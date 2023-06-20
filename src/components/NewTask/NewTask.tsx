@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react';
 import './NewTask.scss';
 import {Form, Button} from 'react-bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
-import {LinkedTasks} from "@components/LinkedTask/LinkedTasks";
-import {useActions} from "@hooks/useActions";
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {TaskProps} from "@custom_types/TaskProps";
-import {Task} from "@custom_types/Task";
-import {Goal} from "@custom_types/Goal";
-import {User} from "@custom_types/User";
+import {LinkedTasks} from '@components/LinkedTask/LinkedTasks';
+import {useActions} from '@hooks/useActions';
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {TaskProps} from '@custom_types/TaskProps';
+import {Task} from '@custom_types/Task';
+import {Goal} from '@custom_types/Goal';
+import {User} from '@custom_types/User';
 
 export const NewTask:React.FC<unknown> = () => {
     const {createTask, showSuccess} = useActions();
@@ -138,9 +138,9 @@ export const NewTask:React.FC<unknown> = () => {
                 <Form.Control id="new_task_priority" type="text" placeholder="Введите численный приоритет" />
             </Form.Group>
 
-            {!loading && tasks.length > 0 && <LinkedTasks setTask={setTaskFrom} type={"before"} tasks={taskList} update={usingTask} />}
+            {!loading && tasks.length > 0 && <LinkedTasks setTask={setTaskFrom} type={'before'} tasks={taskList} update={usingTask} />}
 
-            {!loading && tasks.length > 1 && <LinkedTasks setTask={setTaskTo} type={"after"} tasks={taskList} update={usingTask} />}
+            {!loading && tasks.length > 1 && <LinkedTasks setTask={setTaskTo} type={'after'} tasks={taskList} update={usingTask} />}
 
             <Button variant="primary" className="new_task_create_task_btn" onClick={createNewTask}>Создать задачу</Button>
 

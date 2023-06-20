@@ -1,5 +1,5 @@
-import {ToastsAction, ToastsActionsType} from "../types/toast";
-import {Dispatch} from "redux";
+import {ToastsAction, ToastsActionsType} from '../types/toast';
+import {Dispatch} from 'redux';
 
 export const showWarning = () => {
     return (dispatch: Dispatch<ToastsAction>) => {

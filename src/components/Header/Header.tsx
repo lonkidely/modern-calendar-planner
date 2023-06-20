@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './Header.scss';
-import {Link} from "react-router-dom";
-import {ProfileButton} from "@components/ProfileButton/ProfileButton";
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {Button} from "react-bootstrap";
+import {Link} from 'react-router-dom';
+import {ProfileButton} from '@components/ProfileButton/ProfileButton';
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {Button} from 'react-bootstrap';
 
 export const Header: React.FC<unknown> = () => {
     const {user} = useTypedSelector(state => state.user);
@@ -46,9 +46,9 @@ export const Header: React.FC<unknown> = () => {
                         <Link to="/tasks" className="header__menu__item">Мои задачи</Link>
                     </div>
                     {user === null ?
-                        <ProfileButton address={"/login"} text={"Войти"} />
+                        <ProfileButton address={'/login'} text={'Войти'} />
                         :
-                        <ProfileButton address={"/logout"} text={"Выйти"} />
+                        <ProfileButton address={'/logout'} text={'Выйти'} />
                     }
                 </div>
             </div>

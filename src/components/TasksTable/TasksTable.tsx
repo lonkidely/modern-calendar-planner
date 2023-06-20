@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Table} from 'react-bootstrap';
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {useActions} from "@hooks/useActions";
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {useActions} from '@hooks/useActions';
 import './TasksTable.scss';
 
 export const TasksTable = ({selTask}) => {

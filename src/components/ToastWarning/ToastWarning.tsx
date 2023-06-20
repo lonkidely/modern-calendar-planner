@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from "react";
-import {Toast, ToastContainer} from "react-bootstrap";
+import React, {useEffect, useState} from 'react';
+import {Toast, ToastContainer} from 'react-bootstrap';
 import './ToastWarning.scss';
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {useActions} from "@hooks/useActions";
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {useActions} from '@hooks/useActions';
 
 export const ToastWarning:React.FC = () => {
     const {warning} = useTypedSelector(state => state.toasts);

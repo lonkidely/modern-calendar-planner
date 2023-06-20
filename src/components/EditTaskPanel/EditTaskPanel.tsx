@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
-import {Button, Form} from "react-bootstrap";
-import {LinkedTasks} from "@components/LinkedTask/LinkedTasks";
-import {useTypedSelector} from "@hooks/useTypedSelector";
-import {TaskProps} from "@custom_types/TaskProps";
-import {Goal} from "@custom_types/Goal";
-import {User} from "@custom_types/User";
-import {Task} from "@custom_types/Task";
-import {useActions} from "@hooks/useActions";
+import React, {useEffect, useState} from 'react';
+import {Button, Form} from 'react-bootstrap';
+import {LinkedTasks} from '@components/LinkedTask/LinkedTasks';
+import {useTypedSelector} from '@hooks/useTypedSelector';
+import {TaskProps} from '@custom_types/TaskProps';
+import {Goal} from '@custom_types/Goal';
+import {User} from '@custom_types/User';
+import {Task} from '@custom_types/Task';
+import {useActions} from '@hooks/useActions';
 import './EditTaskPanel.scss';
 
 
@@ -188,9 +188,9 @@ export const EditTaskPanel = ({task}) => {
                 </Form.Select>
             </Form.Group>
 
-            {!loading && tasks.length > 1 && <LinkedTasks defaultTask={task?.fromTask} setTask={setTaskFrom} type={"before"} tasks={taskList} update={usingTask} />}
+            {!loading && tasks.length > 1 && <LinkedTasks defaultTask={task?.fromTask} setTask={setTaskFrom} type={'before'} tasks={taskList} update={usingTask} />}
 
-            {!loading && tasks.length > 2 && <LinkedTasks defaultTask={task?.toTask} setTask={setTaskTo} type={"after"} tasks={taskList} update={usingTask} />}
+            {!loading && tasks.length > 2 && <LinkedTasks defaultTask={task?.toTask} setTask={setTaskTo} type={'after'} tasks={taskList} update={usingTask} />}
 
             <Button variant="primary" className="edit_task_create_task_btn" onClick={editTaskFunc}>Изменить задачу</Button>
             <Button variant="danger" className="edit_task_close_panel_btn" onClick={deleteTaskFunc}>Удалить задачу</Button>

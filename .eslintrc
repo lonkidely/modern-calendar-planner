@@ -16,6 +16,7 @@
     "indent": ["error", 4],
     "eol-last": ["error", "always"],
     "semi": ["error", "always"],
+    "quotes": ["error", "single"],
     "no-console": 1,
     "consistent-return": 1,
     "no-alert": 2,

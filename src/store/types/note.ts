@@ -1,4 +1,4 @@
-import {Note} from "@custom_types/Note";
+import {Note} from '@custom_types/Note';
 
 export interface NoteState {
     notes: Note[];

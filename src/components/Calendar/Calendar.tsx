@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
 import './Calendar.scss';
 import {Button, Table} from 'react-bootstrap';
-import {CalendarDay} from "@components/CalendarDay/CalendarDay";
+import {CalendarDay} from '@components/CalendarDay/CalendarDay';
 
 
 export const Calendar:React.FC<unknown> = () => {
-    const daysOfWeek:string[] = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"];
+    const daysOfWeek:string[] = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
     const monthOfYear:string[] = [
-        "Январь",
-        "Февраль",
-        "Март",
-        "Апрель",
-        "Май",
-        "Июнь",
-        "Июль",
-        "Август",
-        "Сентябрь",
-        "Октябрь",
-        "Ноябрь",
-        "Декабрь"
+        'Январь',
+        'Февраль',
+        'Март',
+        'Апрель',
+        'Май',
+        'Июнь',
+        'Июль',
+        'Август',
+        'Сентябрь',
+        'Октябрь',
+        'Ноябрь',
+        'Декабрь'
     ];
 
     const currentDate:Date = new Date();
@@ -51,9 +51,9 @@ export const Calendar:React.FC<unknown> = () => {
         countTasks:number;
     };
     enum typeOfCalendarDay {
-        active = "calendar_day",
-        inactive = "calendar_day_inactive",
-        today = "calendar_day_today",
+        active = 'calendar_day',
+        inactive = 'calendar_day_inactive',
+        today = 'calendar_day_today',
     }
 
     let calendarMonth:calendarDay[] = [];
@@ -79,7 +79,7 @@ export const Calendar:React.FC<unknown> = () => {
 
     return (
         <div className="calendar">
-            <Table borderless hover size={"sm"}>
+            <Table borderless hover size={'sm'}>
                 <thead>
                     <tr className="calendar__utils">
                         <th></th>
@@ -92,7 +92,7 @@ export const Calendar:React.FC<unknown> = () => {
 
                         <th>
                             <div className="calendar__utils__current_month">
-                                {monthOfYear[currentMonth] + " " + currentYear}
+                                {monthOfYear[currentMonth] + ' ' + currentYear}
                             </div>
                         </th>
 

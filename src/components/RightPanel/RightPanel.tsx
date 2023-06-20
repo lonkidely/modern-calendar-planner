@@ -1,6 +1,6 @@
 import React from 'react';
 import './RightPanel.scss';
-import {useActions} from "@hooks/useActions";
+import {useActions} from '@hooks/useActions';
 
 export const RightPanel:React.FC<unknown> = () => {
     const {getGoals, getTasks} = useActions();

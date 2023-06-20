@@ -1,5 +1,5 @@
-import {User} from "@custom_types/User";
-import {Task} from "@custom_types/Task";
+import {User} from '@custom_types/User';
+import {Task} from '@custom_types/Task';
 
 export interface Goal {
     id?:string,

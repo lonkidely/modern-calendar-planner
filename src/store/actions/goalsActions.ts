@@ -1,8 +1,8 @@
-import {GoalsAction, GoalsActionsType} from "../types/goals";
+import {GoalsAction, GoalsActionsType} from '../types/goals';
 import {Dispatch} from 'redux';
 import {CHANGE_GOAL_URL, CREATE_GOAL_URL, DELETE_GOAL_URL, GET_GOALS_URL} from '@config/config';
-import axios from "axios";
-import {Goal} from "@custom_types/Goal";
+import axios from 'axios';
+import {Goal} from '@custom_types/Goal';
 
 export const createGoal = (goal:Goal) => {
     return async (dispatch: Dispatch<GoalsAction>) => {
@@ -19,13 +19,13 @@ export const createGoal = (goal:Goal) => {
                 }
             ).then(res => res.data);
             const payload: Goal = {
-                id: response["id"],
-                startDate: new Date(response["startDate"]),
-                endDate: new Date(response["endDate"]),
-                title: response["title"],
-                important: response["important"],
-                urgency: response["urgency"],
-                tasks: response["tasks"],
+                id: response['id'],
+                startDate: new Date(response['startDate']),
+                endDate: new Date(response['endDate']),
+                title: response['title'],
+                important: response['important'],
+                urgency: response['urgency'],
+                tasks: response['tasks'],
             };
             dispatch({
                 type: GoalsActionsType.CREATE_GOAL_SUCCESS,
@@ -35,7 +35,7 @@ export const createGoal = (goal:Goal) => {
             dispatch(
                 {
                     type:GoalsActionsType.CREATE_GOAL_ERROR,
-                    payload: "При создании цели возникла ошибка"
+                    payload: 'При создании цели возникла ошибка'
                 }
             );
         }
@@ -65,7 +65,7 @@ export const deleteGoal = (goal: Goal) => {
             dispatch(
                 {
                     type:GoalsActionsType.DELETE_GOAL_ERROR,
-                    payload: "При удалении цели возникла ошибка"
+                    payload: 'При удалении цели возникла ошибка'
                 }
             );
         }
@@ -88,13 +88,13 @@ export const changeGoal = (goal: Goal) => {
             ).then(res => res.data);
 
             const payload: Goal = {
-                id: response["id"],
-                startDate: new Date(response["startDate"]),
-                endDate: new Date(response["endDate"]),
-                title: response["title"],
-                important: response["important"],
-                urgency: response["urgency"],
-                tasks: response["tasks"],
+                id: response['id'],
+                startDate: new Date(response['startDate']),
+                endDate: new Date(response['endDate']),
+                title: response['title'],
+                important: response['important'],
+                urgency: response['urgency'],
+                tasks: response['tasks'],
             };
 
             dispatch({
@@ -105,7 +105,7 @@ export const changeGoal = (goal: Goal) => {
             dispatch(
                 {
                     type:GoalsActionsType.CHANGE_GOAL_ERROR,
-                    payload: "При изменении цели возникла ошибка"
+                    payload: 'При изменении цели возникла ошибка'
                 }
             );
         }
@@ -127,13 +127,13 @@ export const getGoals = () => {
             ).then(res => res.data);
             const payload: Goal[] = response.map(goal => {
                 const curGoal: Goal = {};
-                curGoal.id = goal["id"];
-                curGoal.startDate = new Date(goal["startDate"]);
-                curGoal.endDate = new Date(goal["endDate"]);
-                curGoal.title = goal["title"];
-                curGoal.important = goal["important"];
-                curGoal.urgency = goal["urgency"];
-                curGoal.tasks = goal["tasks"];
+                curGoal.id = goal['id'];
+                curGoal.startDate = new Date(goal['startDate']);
+                curGoal.endDate = new Date(goal['endDate']);
+                curGoal.title = goal['title'];
+                curGoal.important = goal['important'];
+                curGoal.urgency = goal['urgency'];
+                curGoal.tasks = goal['tasks'];
                 return curGoal;
             });
             dispatch({
@@ -144,7 +144,7 @@ export const getGoals = () => {
             dispatch(
                 {
                     type:GoalsActionsType.GET_GOALS_ERROR,
-                    payload: "При получении списка целей возникла ошибка"
+                    payload: 'При получении списка целей возникла ошибка'
                 }
             );
         }

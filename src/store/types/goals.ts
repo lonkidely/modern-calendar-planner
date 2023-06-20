@@ -1,4 +1,4 @@
-import {Goal} from "@custom_types/Goal";
+import {Goal} from '@custom_types/Goal';
 
 export interface GoalsState {
     goals: Goal[];

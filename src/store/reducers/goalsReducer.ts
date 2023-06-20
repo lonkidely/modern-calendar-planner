@@ -1,4 +1,4 @@
-import {GoalsAction, GoalsActionsType, GoalsState} from "../types/goals";
+import {GoalsAction, GoalsActionsType, GoalsState} from '../types/goals';
 
 const initialState: GoalsState = {
     goals: [],

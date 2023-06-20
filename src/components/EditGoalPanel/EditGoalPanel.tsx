@@ -1,7 +1,7 @@
-import React from "react";
-import {Button, Form} from "react-bootstrap";
-import {useActions} from "@hooks/useActions";
-import {Goal} from "@custom_types/Goal";
+import React from 'react';
+import {Button, Form} from 'react-bootstrap';
+import {useActions} from '@hooks/useActions';
+import {Goal} from '@custom_types/Goal';
 import './EditGoalPanel.scss';
 
 

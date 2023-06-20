@@ -1,7 +1,7 @@
 import {NoteAction, NoteActionsType} from '../types/note';
 import {Dispatch} from 'redux';
 import {ADD_NOTE_URL, FETCH_NOTES_URL, REMOVE_NOTE_URL} from '@config/config';
-import axios from "axios";
+import axios from 'axios';
 import {Note} from '@custom_types/Note';
 import {User} from '@custom_types/User';
 
@@ -11,16 +11,16 @@ export const fetchNotes = (userId:string) => {
         try {
             dispatch({type:NoteActionsType.FETCH_NOTES});
             const response = await axios.post(FETCH_NOTES_URL, {
-                "id": userId,
+                'id': userId,
             }, {
                 withCredentials: true,
             });
             const res = response.data.map(note => {
                 return {
-                    id:note["id"],
-                    name:note["name"],
-                    description:note["description"],
-                    created:new Date(note["created"]),
+                    id:note['id'],
+                    name:note['name'],
+                    description:note['description'],
+                    created:new Date(note['created']),
                 };
             });
             dispatch({
@@ -41,19 +41,19 @@ export const addNote = (note:Note, user:User) => {
         try {
             dispatch({type:NoteActionsType.ADD_NOTE});
             const response = await axios.post(ADD_NOTE_URL, {
-                "name":note.name,
-                "description":note.description,
-                "createdBy": {
-                    "id":user.id
+                'name':note.name,
+                'description':note.description,
+                'createdBy': {
+                    'id':user.id
                 }
             }, {
                 withCredentials: true,
             });
             const res: Note = {
-                id:response.data["id"],
-                name:response.data["name"],
-                description:response.data["description"],
-                created: new Date(response.data["created"]),
+                id:response.data['id'],
+                name:response.data['name'],
+                description:response.data['description'],
+                created: new Date(response.data['created']),
             };
             dispatch({type:NoteActionsType.ADD_NOTE_SUCCESS, payload: res});
         } catch (e) {
@@ -70,7 +70,7 @@ export const removeNote = (note:Note) => {
         try {
             dispatch({type:NoteActionsType.REMOVE_NOTE});
             await axios.post(REMOVE_NOTE_URL, {
-                "id":note.id,
+                'id':note.id,
             }, {
                 withCredentials: true,
             });

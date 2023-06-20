@@ -11,8 +11,8 @@ export const loginUser = (login, password:string) => {
             const response = await axios.post(
                 LOGIN_URL, 
                 {
-                    "login":login,
-                    "password":password,
+                    'login':login,
+                    'password':password,
                 },
                 {
                     headers: {
@@ -22,12 +22,12 @@ export const loginUser = (login, password:string) => {
                 }
             );
             const payload:User = response.data;
-            payload["birthday"] = new Date(response["birthday"]);
+            payload['birthday'] = new Date(response['birthday']);
             dispatch({type:UserActionsType.LOGIN_USER_SUCCESS, payload: payload});
         } catch (e) {
             dispatch({
                 type:UserActionsType.LOGIN_USER_ERROR,
-                payload: "Не удалось произвести вход",
+                payload: 'Не удалось произвести вход',
             });
         }
     };
@@ -50,7 +50,7 @@ export const logoutUser = () => {
         } catch (e) {
             dispatch({
                 type:UserActionsType.LOGOUT_USER_ERROR,
-                payload: "Не удалось выйти из системы",
+                payload: 'Не удалось выйти из системы',
             });
         }
     };
@@ -70,12 +70,12 @@ export const authUser = () => {
                 }
             );
             const payload:User = response.data;
-            payload["birthday"] = new Date(response["birthday"]);
+            payload['birthday'] = new Date(response['birthday']);
             dispatch({type:UserActionsType.AUTH_USER_SUCCESS, payload: payload});
         } catch (e) {
             dispatch({
                 type:UserActionsType.AUTH_USER_ERROR,
-                payload: "Не удалось произвести авторизацию",
+                payload: 'Не удалось произвести авторизацию',
             });
         }
     };
@@ -96,12 +96,12 @@ export const signupUser = (user:User) => {
                 }
             );
             const payload:User = response.data;
-            payload["birthday"] = new Date(response["birthday"]);
+            payload['birthday'] = new Date(response['birthday']);
             dispatch({type:UserActionsType.SIGNUP_USER_SUCCESS, payload: payload});
         } catch (e) {
             dispatch({
                 type:UserActionsType.SIGNUP_USER_ERROR,
-                payload: "Не удалось зарегистрировать пользователя",
+                payload: 'Не удалось зарегистрировать пользователя',
             });
         }
     };

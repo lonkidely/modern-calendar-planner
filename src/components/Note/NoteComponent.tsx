@@ -1,7 +1,7 @@
 import React from 'react';
 import './NoteComponent.scss';
-import {Note} from "@custom_types/Note";
-import {useActions} from "@hooks/useActions";
+import {Note} from '@custom_types/Note';
+import {useActions} from '@hooks/useActions';
 
 type NoteComponentProps = {
     note:Note,

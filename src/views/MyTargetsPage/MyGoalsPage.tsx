@@ -4,14 +4,14 @@ import { useActions } from '@hooks/useActions';
 import { useTypedSelector } from '@hooks/useTypedSelector';
 import React, {useEffect, useState} from 'react';
 import './MyGoalsPage.scss';
-import {RightPanel} from "@components/RightPanel/RightPanel";
-import {NewGoal} from "@components/NewGoal/NewGoal";
-import {NewTask} from "@components/NewTask/NewTask";
-import {NotesPanel} from "@components/NotesPanel/NotesPanel";
-import {EditGoalPanel} from "@components/EditGoalPanel/EditGoalPanel";
-import {ToastInfo} from "@components/ToastInfo/ToastInfo";
-import {ToastWarning} from "@components/ToastWarning/ToastWarning";
-import {ToastSuccess} from "@components/ToastSuccess/ToastSuccess";
+import {RightPanel} from '@components/RightPanel/RightPanel';
+import {NewGoal} from '@components/NewGoal/NewGoal';
+import {NewTask} from '@components/NewTask/NewTask';
+import {NotesPanel} from '@components/NotesPanel/NotesPanel';
+import {EditGoalPanel} from '@components/EditGoalPanel/EditGoalPanel';
+import {ToastInfo} from '@components/ToastInfo/ToastInfo';
+import {ToastWarning} from '@components/ToastWarning/ToastWarning';
+import {ToastSuccess} from '@components/ToastSuccess/ToastSuccess';
 
 export const MyGoalsPage = () => {
     const { user } = useTypedSelector((state) => state.user);
